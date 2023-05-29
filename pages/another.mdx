@@ -1,0 +1,111 @@
+# Get Started
+
+## Clone From Github
+
+To clone a project from GitHub and open it in IntelliJ IDEA, follow these steps:
+
+**1-Install IntelliJ IDEA:** If you don't have IntelliJ IDEA installed, download and install the Community or Ultimate edition from the JetBrains website:  [Download IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
+
+**2-Open IntelliJ IDEA**: Launch IntelliJ IDEA on your computer.
+
+**3-Clone the GitHub repository:** In IntelliJ IDEA, select "Get from Version Control" from the welcome screen, or go to "File" -> "New" -> "Project from Version Control" -> "Git".
+
+**4-Provide the repository URL:** In the "URL" field, enter the URL of the GitHub repository.
+
+**5-Clone the repository:** Click on the "Clone" button to clone the repository from GitHub to your local machine.
+
+**6-Open the project:** Once the cloning process is complete, IntelliJ IDEA will automatically detect the project and prompt you to open it. Click on the "Open" button to open the project.
+
+Now IntelliJ IDEA will download all dependencies automatically
+
+## Setup environment varibales
+
+There are several environment variables that you should add firs
+
+**1-fcm_auth_key :** This variable should contain your FCM authorization key, which is used to send call invitations to users when create room.
+
+**2-roomsAPI_secret :** This variable should store the secret key used for JWT encryption. It is used in the encryption process to secure and authenticate the tokens.
+
+**3-email_password :** To send OTP codes to users, an email and password are required. Here, you should add your account password to enable this functionality.
+
+## Run Project
+
+After completing all the previous steps, you can now run the project and try it out by accessing
+```http://localhost:8080``` in your browser.
+
+
+## Project Structure
+
+```
+📦API
+ ┣ 📂data
+ ┃ ┣ 📂models
+ ┃ ┃ ┣ 📜CallInvitationDataModel.kt
+ ┃ ┃ ┣ 📜CallInvitationRequestModel.kt
+ ┃ ┃ ┣ 📜Participant.kt
+ ┃ ┃ ┣ 📜Room.kt
+ ┃ ┃ ┗ 📜User.kt
+ ┃ ┣ 📂repositories
+ ┃ ┃ ┣ 📜RoomRepositoryImpl.kt
+ ┃ ┃ ┗ 📜UserRepositoryImpl.kt
+ ┃ ┣ 📂sources
+ ┃ ┃ ┣ 📂roomDataSources
+ ┃ ┃ ┃ ┣ 📜FcmRemoteDataSource.kt
+ ┃ ┃ ┃ ┗ 📜RoomRemoteDataSource.kt
+ ┃ ┃ ┗ 📂userDataSources
+ ┃ ┃ ┃ ┗ 📜UserRemoteDataSource.kt
+ ┃ ┗ 📂utilities
+ ┃ ┃ ┣ 📂extensions
+ ┃ ┃ ┃ ┣ 📜RoomExtensions.kt
+ ┃ ┃ ┃ ┗ 📜UserExtensions.kt
+ ┃ ┃ ┣ 📜Constants.kt
+ ┃ ┃ ┗ 📜UserJWTConfig.kt
+ ┣ 📂di
+ ┃ ┗ 📂modules
+ ┃ ┃ ┗ 📜MainModule.kt
+ ┣ 📂domain
+ ┃ ┣ 📂models
+ ┃ ┃ ┣ 📜BaseResponse.kt
+ ┃ ┃ ┣ 📜ParticipantModel.kt
+ ┃ ┃ ┣ 📜RoomModel.kt
+ ┃ ┃ ┣ 📜RoomType.kt
+ ┃ ┃ ┗ 📜UserModel.kt
+ ┃ ┣ 📂repositories
+ ┃ ┃ ┣ 📜RoomRepository.kt
+ ┃ ┃ ┗ 📜UserRepository.kt
+ ┃ ┗ 📂usecases
+ ┃ ┃ ┣ 📜CreateRoomUseCase.kt
+ ┃ ┃ ┣ 📜DeleteAccountUseCase.kt
+ ┃ ┃ ┣ 📜DeleteRoomUseCase.kt
+ ┃ ┃ ┣ 📜GetRoomInfoUseCase.kt
+ ┃ ┃ ┣ 📜GetUserFcmTokenUseCase.kt
+ ┃ ┃ ┣ 📜GetUserProfileUseCase.kt
+ ┃ ┃ ┣ 📜GetUserRoomsUseCase.kt
+ ┃ ┃ ┣ 📜JoinRoomUseCase.kt
+ ┃ ┃ ┣ 📜LoginUseCase.kt
+ ┃ ┃ ┣ 📜RegisterUseCase.kt
+ ┃ ┃ ┣ 📜SendCallInvitationUseCase.kt
+ ┃ ┃ ┣ 📜SendEmailVerifyCodeUseCase.kt
+ ┃ ┃ ┣ 📜UpdateUserDataUseCase.kt
+ ┃ ┃ ┗ 📜VerifyCodeUseCase.kt
+ ┣ 📂plugins
+ ┃ ┣ 📜Monitoring.kt
+ ┃ ┣ 📜Routing.kt
+ ┃ ┣ 📜Security.kt
+ ┃ ┣ 📜Serialization.kt
+ ┃ ┗ 📜Sockets.kt
+ ┣ 📂routes
+ ┃ ┣ 📂rooms
+ ┃ ┃ ┣ 📂requestModels
+ ┃ ┃ ┃ ┣ 📜CreateRoomParams.kt
+ ┃ ┃ ┃ ┗ 📜JoinRoomParams.kt
+ ┃ ┃ ┗ 📜roomsRoute.kt
+ ┃ ┗ 📂user
+ ┃ ┃ ┣ 📂requestsModels
+ ┃ ┃ ┃ ┣ 📜CreateUserParams.kt
+ ┃ ┃ ┃ ┣ 📜UpdateUserParams.kt
+ ┃ ┃ ┃ ┣ 📜UpdateUserTokenParams.kt
+ ┃ ┃ ┃ ┗ 📜UserLoginParams.kt
+ ┃ ┃ ┗ 📜userRoute.kt
+ ┗ 📜Application.kt
+```

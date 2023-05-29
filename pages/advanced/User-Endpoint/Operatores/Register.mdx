@@ -1,0 +1,47 @@
+# [POST](#endpoints) register
+
+This endpoint is used to register a new user.
+```
+ http://127.0.0.1:8080/user/register
+```
+##### Body raw (json)
+
+The request body should contain the following information:
+```json
+{
+  "name": "Adel Ayman",
+  "email": "adelayman0000@gmail.com",
+  "password": "123456"
+}
+```
+- "name": The name of the user being registered.
+- "email": The email address of the user.
+- "password": The password chosen by the user.
+
+##### Response
+
+The response will have the following structure:
+```json
+{
+    "status": true,
+    "data": {
+        "userID": "63d8537bf7f5302cce37e4a7",
+        "userToken": "TOKEN",
+        "userName": "Adel Ayman",
+        "email": "test@gmail.com",
+        "isVerified": false,
+        "fcmToken": "Guest"
+    },
+    "message": "Registration done successfully"
+}
+```
+- "status": Indicates whether the registration was successful (true) or not (false).
+- "data": Contains the details of the registered user.
+    - "userID": The unique identifier assigned to the user.
+    - "userToken": The authentication token associated with the user.
+    - "userName": The name of the registered user.
+    - "email": The email address of the registered user.
+    - "isVerified": Indicates whether the user's email is verified (true) or not (false).
+    - "fcmToken": The FCM (Firebase Cloud Messaging) token associated with the user.
+- "message": A descriptive message indicating the outcome of the registration process.
+The response provides the necessary details about the registered user, including the assigned userToken which can be used for subsequent authentication and authorization purposes.

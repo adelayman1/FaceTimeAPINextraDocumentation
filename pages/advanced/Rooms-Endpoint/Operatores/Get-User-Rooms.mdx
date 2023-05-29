@@ -1,0 +1,48 @@
+# [GET](#endpoints) Get User Rooms
+This endpoint allows users to retrieve information about all the rooms they have joined.
+```
+ http://127.0.0.1:8080/rooms
+```
+##### Request Headers
+
+```Authorization : Bearer TOKEN```
+
+##### Response
+```json
+{
+    "status": true,
+    "data": [
+        {
+            "roomId": "63d70ffd508d7c2a2be07d3a",
+            "roomType": {
+                "id": 1,
+                "type": "Link"
+            },
+            "roomAuthor": "63d5b2c8db392954ecae9737",
+            "participants": null,
+            "time": "2023-01-30T02:31:57.618"
+        },
+        {
+            "roomId": "63d710a884f8db3d80ca4c7d",
+            "roomType": {
+                "id": 2,
+                "type": "FaceTime"
+            },
+            "roomAuthor": "63d5b2c8db392954ecae9737",
+            "participants": [
+                {
+                    "userEmail": "adelayman0000@gmail.com",
+                    "userName": "Adel Ayman",
+                    "userId": "63d5b2c8db392954ecae9737",
+                    "missedCall": true
+                }
+            ],
+            "time": "2023-01-30T02:34:48.542"
+        }...........
+    ],
+    "message": "rooms have got successfully"
+}
+```
+Upon successful retrieval of the user's rooms, the API will respond with a status of true and provide an array of room objects. Each room object contains the room ID, room type, room author, participants (if any), and the timestamp of when the room was created.
+
+Use this endpoint to get the list of rooms that the user has joined.

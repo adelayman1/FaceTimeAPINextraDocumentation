@@ -1,0 +1,37 @@
+# [POST](#endpoints) Verify OTP
+This endpoint allows users to complete the verification of their account by verifying the code sent to their email.
+```
+ http://127.0.0.1:8080/user/verify-code
+```
+##### Request Headers
+
+The request should include the following header:
+
+```Authorization : Bearer TOKEN```
+
+The TOKEN should be replaced with the actual user token obtained during the login process.
+
+##### Query Params
+The request should include the following query parameter:
+
+``` diff
++ otp_code(*required)
+```
+The otp_code parameter should be replaced with the verification code received in the email.
+
+##### Response
+Upon a successful verification, the API will respond with the following structure:
+```json
+{
+    "status": true,
+    "data": {
+        "userID": "63d5b2c8db392954ecae9737",
+        "userToken": "TOKEN",
+        "userName": "Adel Ayman",
+        "email": "adelayman0000@gmail.com",
+        "isVerified": true,
+        "fcmToken": "YOUR_FCM_TOKEN"
+    },
+    "message": "Account has verified successfully"
+}
+```

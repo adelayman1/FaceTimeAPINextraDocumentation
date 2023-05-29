@@ -1,0 +1,23 @@
+# [DEL](#endpoints) Delete Room
+
+This endpoint allows users to delete a room that they have created. To delete a room, 
+replace ```{ROOM_ID}``` in the URL with the ID of the room you want to delete.
+
+```
+ http://127.0.0.1:8080/rooms/{ROOM_ID}
+```
+##### Request Headers
+
+```Authorization : Bearer TOKEN```
+
+##### Response
+```json
+{
+  "status": true,
+  "data": null,
+  "message": "room has deleted successfully"
+}
+```
+Upon successful deletion of the room, the API will respond with a status of true and a message confirming that the room has been deleted.
+
+Use this endpoint to delete a room that you have created and no longer need.

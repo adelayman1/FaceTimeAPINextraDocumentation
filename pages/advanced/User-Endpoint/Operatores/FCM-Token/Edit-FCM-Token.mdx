@@ -1,0 +1,41 @@
+# [PATCH](#endpoints) Edit FCM Token
+This endpoint allows users to update their Firebase Cloud Messaging (FCM) token. The FCM token is used to send call invitations to the user.
+
+**Important Note:you must active your account first. you can active account by verify it**
+
+```
+http://127.0.0.1:8080/user/fcm-token
+
+```
+##### Request Headers
+The request should include the following header:
+
+```Authorization : Bearer TOKEN```
+
+The TOKEN should be replaced with the actual user token obtained during the login process.
+
+##### Body raw (json)
+The request body should contain the following information:
+```json
+{
+    "fcmToken":"YOUR_NEW_FCM_TOKEN"
+}
+```
+Replace "YOUR_NEW_FCM_TOKEN" with the updated FCM token that you want to set.
+##### Response*
+Upon successful update of the FCM token, the API will respond with the following structure:
+```json
+{
+    "status": true,
+    "data": {
+        "userID": "63d5b2c8db392954ecae9737",
+        "userToken": null,
+        "userName": "Adel Ayman",
+        "email": "adelayman0000@gmail.com",
+        "isVerified": false,
+        "fcmToken": "YOUR_FCM_TOKEN"
+    },
+    "message": "user details updated successfully"
+}
+```
+By updating your FCM token, you ensure that you receive call invitations correctly. Make sure to update the token whenever necessary to maintain seamless communication.

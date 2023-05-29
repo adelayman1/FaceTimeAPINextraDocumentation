@@ -1,0 +1,15 @@
+{
+    "index": "Introduction",
+    "another": "Get Started",
+    "advanced": "Endpoints",
+    "about": {
+        "title": "About",
+        "type": "page"
+    },
+    "contact": {
+        "title": "Contact ↗",
+        "type": "page",
+        "href": "https://github.com/adelayman1",
+        "newWindow": true
+    }
+}

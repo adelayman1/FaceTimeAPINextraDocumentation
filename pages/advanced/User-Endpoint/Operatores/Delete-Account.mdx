@@ -1,0 +1,24 @@
+# [DEL](#endpoints) Delete Account
+
+This endpoint allows users to delete their account permanently.
+```
+ http://127.0.0.1:8080/user
+```
+##### Request Headers
+The request should include the following header:
+
+```Authorization : Bearer TOKEN```
+
+The TOKEN should be replaced with the actual user token obtained during the login process.
+
+##### Response
+
+Upon successful deletion of the account, the API will respond with the following structure:
+```json
+{
+    "status": true,
+    "data": null,
+    "message": "room has deleted successfully"
+}
+```
+Please note that deleting your account is an irreversible action, and all associated data will be permanently removed.

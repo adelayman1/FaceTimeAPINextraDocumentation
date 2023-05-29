@@ -1,0 +1,44 @@
+# [POST](#endpoints) Join Room
+This endpoint allows users to join a room they have been invited to as a participant.
+The user should have the room ID to join.
+```
+ http://127.0.0.1:8080/rooms/{note_id}
+```
+##### Request Headers
+
+```Authorization : Bearer TOKEN```
+
+##### Body raw (json)
+```json
+{
+    "roomId":"ROOM_ID"
+}
+```
+
+##### Response
+```json
+{
+    "status": true,
+    "data": {
+        "roomId": "63d710a884f8db3d80ca4c7d",
+        "roomType": {
+            "id": 2,
+            "type": "FaceTime"
+        },
+        "roomAuthor": "test",
+        "participants": [
+            {
+                "userEmail": "adelayman0000@gmail.com",
+                "userName": "Adel Ayman",
+                "userId": "63d5b2c8db392954ecae9737",
+                "missedCall": false
+            }
+        ],
+        "time": "2023-01-30T02:34:48.542"
+    },
+    "message": "user has joined successfully"
+}
+```
+Upon successful joining of the room, the API will respond with a status of true and provide the room information in the response data. The room information includes the room ID, room type, room author, participants (including the joining user), and the timestamp of when the room was created.
+
+Use this endpoint to join a room you have been invited to as a participant.

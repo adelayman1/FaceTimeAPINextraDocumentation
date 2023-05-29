@@ -1,0 +1,25 @@
+# [POST](#endpoints) Send OTP
+
+This endpoint allows users to request a verification code to be sent to their email address. The verification code is used to complete the account setup and activate it.
+```
+ http://127.0.0.1:8080/user/send-email-code
+```
+##### Request Headers
+
+The request should include the following header:
+
+```Authorization : Bearer TOKEN```
+
+The TOKEN should be replaced with the actual user token obtained during the login process.
+
+##### Response
+
+Upon successful request, the API will respond with the following structure:
+```json
+{
+    "status": true,
+    "data": null,
+    "message": "otp code has sent successfully"
+}
+```
+The user will receive an OTP (One-Time Password) code to their email address, which they can use to verify their account and complete the account setup process.

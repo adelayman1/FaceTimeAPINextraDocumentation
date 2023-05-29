@@ -1,0 +1,26 @@
+# [GET](#endpoints) Get FCM Token
+This endpoint allows users to retrieve their Firebase Cloud Messaging (FCM) token.
+
+**Important Note:you must active your account first. you can active account by verify it**
+
+```
+http://127.0.0.1:8080/user/fcm-token
+```
+##### Request Headers
+
+The request should include the following header:
+
+```Authorization : Bearer TOKEN```
+
+The TOKEN should be replaced with the actual user token obtained during the login process
+
+##### Response
+Upon successful retrieval of the FCM token, the API will respond with the following structure:
+```json
+{
+    "status": true,
+    "data": "YOUR_FCM_TOKEN",
+    "message": "token has got successfully"
+}
+```
+The retrieved FCM token can be used for various purposes, such as sending push notifications or call invitations to the user. Make sure to securely store and handle your FCM token.

@@ -1,0 +1,30 @@
+# [GET](#endpoints) Get Room Info
+This endpoint allows users to retrieve information about a specific room.
+To retrieve the room information, replace ```{ROOM_ID}``` in the URL with the ID of the room.
+```
+ http://127.0.0.1:8080/rooms/{ROOM_ID}
+```
+##### Request Headers
+
+```Authorization : Bearer TOKEN```
+
+##### Response
+```json
+{
+    "status": true,
+    "data": {
+        "roomId": "63d6e8ea04b18a106cf80991",
+        "roomType": {
+            "id": 1,
+            "type": "Link"
+        },
+        "roomAuthor": "63d5b2c8db392954ecae9737",
+        "participants": null,
+        "time": "2023-01-29T23:45:14.572"
+    },
+    "message": "room info has got successfully"
+}
+```
+Upon successful retrieval of the room information, the API will respond with a status of true and provide the room-related data, including the room ID, room type, room author, participants (if any), and the timestamp of when the room was created.
+
+Use this endpoint to get detailed information about a specific room.

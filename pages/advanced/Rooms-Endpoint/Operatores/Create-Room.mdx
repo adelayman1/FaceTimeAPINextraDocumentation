@@ -1,0 +1,63 @@
+# [POST](#endpoints) Create Room
+
+This endpoint allows users to create a new calling room. There are three types of rooms that can be created: LINK, FACETIME, and AUDIO.
+
+- LINK: A room where participants can join a video call using a shared link.
+- FACETIME: A room where participants are invited by email to join a video call.
+- AUDIO: A room where participants can join an audio-only call.
+```
+ http://127.0.0.1:8080/rooms
+```
+##### Request Headers
+
+```Authorization : Bearer TOKEN```
+
+##### Create Link Room Body raw (json)
+```json
+{
+    "roomType":"LINK"
+}
+```
+
+##### Create FACETIME Room Body raw (json)
+```json
+{
+    "roomType":"FACETIME",
+    "participantsEmails":["adelayman0000@gmail.com"]
+}
+```
+
+The ```roomType``` field in the request body should be one of the following enum values: LINK, FACETIME, or AUDIO.
+
+##### Response
+```json
+{
+    "status": true,
+    "data": {
+        "roomId": "63d710a884f8db3d80ca4c7d",
+        "roomType": {
+            "id": 2,
+            "type": "FaceTime"
+        },
+        "roomAuthor": "63d5b2c8db392954ecae9737",
+        "participants": [
+            {
+                "userEmail": "adelayman0000@gmail.com",
+                "userName": "Adel Ayman",
+                "userId": "63d5b2c8db392954ecae9737",
+                "missedCall": true
+            }
+        ],
+        "time": "2023-01-30T02:34:48.542"
+    },
+    "message": "room created successfully"
+}
+```
+Upon successful creation of a room, the API will respond with a status of true and provide the following room details:
+
+roomId: The unique identifier of the created room.
+roomType: An object containing the ID and type of the room (e.g., "FaceTime").
+roomAuthor: The user ID of the room creator.
+participants: An array of participant objects, including their email, name, user ID, and missed call status.
+time: The timestamp indicating when the room was created.
+Use this endpoint to create new calling rooms and facilitate video or audio calls among participants.
