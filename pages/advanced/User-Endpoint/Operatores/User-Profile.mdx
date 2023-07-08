@@ -1,5 +1,5 @@
 # [GET](#endpoints) Profile
-This endpoint allows users to retrieve their profile and account data.
+This endpoint allows clients to retrieve profile and account data for any user.
 
 **Important Note:you must active your account first. you can active account by verify it**
 ```
@@ -12,6 +12,15 @@ The request should include the following header:
 ```Authorization : Bearer TOKEN```
 
 The TOKEN should be replaced with the actual user token obtained during the login process.
+##### Body raw (json)
+
+The request body should contain the following information:
+```json
+{
+  "userId": "USER_ID"
+}
+```
+- "userId": The id of user.
 ##### Response
 ```json
 {
